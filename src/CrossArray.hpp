@@ -133,14 +133,14 @@ namespace sjtu {
             int** new_arrays = new int*[new_capacity];
             int* new_sizes = new int[new_capacity];
             
-            // Copy existing data
-            for (int i = 0; i < capacity; i++) {
+            // Copy existing data - only copy up to count, not capacity
+            for (int i = 0; i < count; i++) {
                 new_arrays[i] = arrays[i];
                 new_sizes[i] = sizes[i];
             }
             
-            // Initialize new slots to nullptr
-            for (int i = capacity; i < new_capacity; i++) {
+            // Initialize all slots (both old and new) to nullptr for any position >= count
+            for (int i = count; i < new_capacity; i++) {
                 new_arrays[i] = nullptr;
                 new_sizes[i] = 0;
             }

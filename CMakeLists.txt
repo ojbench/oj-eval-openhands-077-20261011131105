@@ -10,13 +10,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Add source files
 set(SOURCES
     main.cpp
-    src/CrossArray.cpp
 )
 
 # Create executable
 add_executable(code ${SOURCES})
 
 # Include directories
-target_include_directories(code PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+target_include_directories(code PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 target_compile_options(code PRIVATE -Wall -Wextra -Werror)
